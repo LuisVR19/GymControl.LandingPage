@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "PowerShell(Get-ChildItem \"C:\\\\Projects\\\\Personal\\\\GymControl.LandingPage\\\\gymcontrol-landing\" -Recurse -Name | Where-Object { $_ -notmatch \"node_modules\" } | Select-Object -First 50)",
+      "PowerShell(Move-Item *)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(cmd /c \"rd /s /q C:\\\\Projects\\\\Personal\\\\GymControl.LandingPage\\\\gymcontrol-landing\" 2>&1; Test-Path \"C:\\\\Projects\\\\Personal\\\\GymControl.LandingPage\\\\gymcontrol-landing\")",
+      "PowerShell(Get-Process *)"
+    ]
+  }
+}
