@@ -5,6 +5,9 @@ import PlayIcon from "./icons/PlayIcon";
 import CheckIcon from "./icons/CheckIcon";
 import FlameIcon from "./icons/FlameIcon";
 import PhoneMockup from "./PhoneMockup";
+import content from "../data/content.json";
+
+const { hero } = content;
 
 export default function Hero() {
   return (
@@ -84,7 +87,7 @@ export default function Hero() {
                 display: "inline-block",
               }}
             />
-            Software para gimnasios · Costa Rica
+            {hero.eyebrow}
           </div>
 
           <h1
@@ -97,10 +100,10 @@ export default function Hero() {
               margin: "24px 0 28px",
             }}
           >
-            El gym que opera
+            {hero.headline}
             <br />
             sin{" "}
-            <span style={{ color: "var(--accent)" }}>fricción</span>.
+            <span style={{ color: "var(--accent)" }}>{hero.headlineAccent}</span>.
           </h1>
 
           <p
@@ -112,9 +115,7 @@ export default function Hero() {
               margin: "0 0 36px",
             }}
           >
-            Forja conecta a tus socios y a tu operación en una sola plataforma:
-            app móvil para entrenar y pagar, panel web para administrar sedes,
-            rutinas, cobros y crecimiento.
+            {hero.description}
           </p>
 
           <div
@@ -139,7 +140,7 @@ export default function Hero() {
                 gap: 8,
               }}
             >
-              Empezar prueba · 14 días gratis{" "}
+              {hero.ctaPrimary}{" "}
               <ArrowIcon size={14} />
             </a>
             <a
@@ -170,7 +171,7 @@ export default function Hero() {
               >
                 <PlayIcon size={9} />
               </span>
-              Ver demo interactivo
+              {hero.ctaSecondary}
             </a>
           </div>
 
@@ -184,11 +185,7 @@ export default function Hero() {
               borderTop: "1px solid rgba(245,244,238,0.06)",
             }}
           >
-            {[
-              { num: "+40", label: "gyms activos" },
-              { num: "8.200", label: "socios" },
-              { num: "99.9%", label: "uptime" },
-            ].map((stat, i) => (
+            {hero.stats.map((stat, i) => (
               <div key={stat.label} style={{ display: "flex", alignItems: "center", gap: 32 }}>
                 {i > 0 && (
                   <div
@@ -285,7 +282,7 @@ export default function Hero() {
                     color: "var(--accent)",
                   }}
                 >
-                  78kg
+                  {hero.mockupRecord.value}
                 </div>
                 <div
                   style={{
@@ -295,7 +292,7 @@ export default function Hero() {
                     fontFamily: "var(--font-mono)",
                   }}
                 >
-                  NUEVO RÉCORD
+                  {hero.mockupRecord.label}
                 </div>
               </div>
             </PhoneMockup>
@@ -346,7 +343,7 @@ export default function Hero() {
             </div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 600 }}>
-                Pago recibido
+                {hero.badgePayment.title}
               </div>
               <div
                 style={{
@@ -355,7 +352,7 @@ export default function Hero() {
                   fontFamily: "var(--font-mono)",
                 }}
               >
-                ₡25.000 · 1 May
+                {hero.badgePayment.detail}
               </div>
             </div>
           </div>
@@ -396,7 +393,7 @@ export default function Hero() {
             </div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 600 }}>
-                Racha · 12 días
+                {hero.badgeStreak.title}
               </div>
               <div
                 style={{
@@ -405,7 +402,7 @@ export default function Hero() {
                   fontFamily: "var(--font-mono)",
                 }}
               >
-                Mejor mes del año
+                {hero.badgeStreak.detail}
               </div>
             </div>
           </div>
@@ -416,6 +413,7 @@ export default function Hero() {
 }
 
 function ClientAppPreview() {
+  const app = hero.mockupApp;
   return (
     <div
       style={{
@@ -431,8 +429,8 @@ function ClientAppPreview() {
       {/* top bar */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, color: "#5A5A52", textTransform: "uppercase" }}>Lunes 18 May</div>
-          <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: "#F5F4EE", letterSpacing: -0.5 }}>Hola, Cliente 1</div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, color: "#5A5A52", textTransform: "uppercase" }}>{app.date}</div>
+          <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: "#F5F4EE", letterSpacing: -0.5 }}>{app.greeting}</div>
         </div>
         <div style={{ width: 36, height: 36, borderRadius: 36, background: "#161614", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0" stroke="#A0A097" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -441,25 +439,25 @@ function ClientAppPreview() {
 
       {/* hero workout card */}
       <div style={{ background: "#F5F4EE", color: "#0E0E0C", borderRadius: 20, padding: 20, position: "relative", overflow: "hidden" }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(14,14,12,0.5)", marginBottom: 10 }}>Hoy · Día 3 / 5</div>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(14,14,12,0.5)", marginBottom: 10 }}>{app.workout.dayLabel}</div>
         <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, letterSpacing: -1, lineHeight: 1.05, marginBottom: 16 }}>
-          Pecho &<br />Tríceps
+          {app.workout.name}
         </div>
         <div style={{ display: "flex", gap: 18, marginBottom: 16, fontSize: 11, fontFamily: "var(--font-mono)", color: "rgba(14,14,12,0.6)" }}>
-          <span><b style={{ color: "#0E0E0C", fontFamily: "var(--font-display)", fontSize: 16 }}>8</b> ejercicios</span>
-          <span><b style={{ color: "#0E0E0C", fontFamily: "var(--font-display)", fontSize: 16 }}>~52</b> min</span>
+          <span><b style={{ color: "#0E0E0C", fontFamily: "var(--font-display)", fontSize: 16 }}>{app.workout.exercises}</b> ejercicios</span>
+          <span><b style={{ color: "#0E0E0C", fontFamily: "var(--font-display)", fontSize: 16 }}>{app.workout.duration}</b> min</span>
         </div>
         <div style={{ width: "100%", padding: "12px 16px", borderRadius: 12, background: "var(--accent)", color: "var(--accent-ink)", fontSize: 13, fontWeight: 600, textAlign: "center", fontFamily: "var(--font-display)" }}>
-          Empezar entreno
+          {app.workout.cta}
         </div>
       </div>
 
       {/* stats row */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         <div style={{ background: "#161614", borderRadius: 16, padding: 16 }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52" }}>Esta semana</div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52" }}>{app.statsWeek.label}</div>
           <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, letterSpacing: -1, color: "#F5F4EE", marginTop: 4 }}>
-            3<span style={{ color: "#5A5A52", fontSize: 16 }}>/5</span>
+            {app.statsWeek.value}<span style={{ color: "#5A5A52", fontSize: 16 }}>/{app.statsWeek.total}</span>
           </div>
           <div style={{ display: "flex", gap: 3, marginTop: 8 }}>
             {[1,1,1,0,0].map((v,i) => (
@@ -468,12 +466,12 @@ function ClientAppPreview() {
           </div>
         </div>
         <div style={{ background: "#161614", borderRadius: 16, padding: 16 }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52" }}>Racha</div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52" }}>{app.statsStreak.label}</div>
           <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginTop: 4 }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, letterSpacing: -1, color: "#F5F4EE" }}>12</div>
-            <div style={{ color: "#A0A097", fontSize: 11 }}>días</div>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, letterSpacing: -1, color: "#F5F4EE" }}>{app.statsStreak.value}</div>
+            <div style={{ color: "#A0A097", fontSize: 11 }}>{app.statsStreak.unit}</div>
           </div>
-          <div style={{ fontSize: 11, color: "var(--accent)", marginTop: 8, fontFamily: "var(--font-mono)" }}>🔥 récord</div>
+          <div style={{ fontSize: 11, color: "var(--accent)", marginTop: 8, fontFamily: "var(--font-mono)" }}>{app.statsStreak.badge}</div>
         </div>
       </div>
 
@@ -490,7 +488,7 @@ function ClientAppPreview() {
         display: "flex",
         justifyContent: "space-around",
       }}>
-        {["Inicio", "Rutinas", "Progreso", "Agenda", "Perfil"].map((label, i) => (
+        {app.bottomNav.map((label, i) => (
           <div key={label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, color: i === 0 ? "#F5F4EE" : "#5A5A52" }}>
             <div style={{ width: 18, height: 18, borderRadius: 4, background: i === 0 ? "var(--accent)" : "transparent" }} />
             <span style={{ fontSize: 8, fontWeight: 500 }}>{label}</span>

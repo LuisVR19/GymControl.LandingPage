@@ -1,3 +1,7 @@
+import content from "../data/content.json";
+
+const { testimonial } = content;
+
 export default function Testimonial() {
   return (
     <section
@@ -31,9 +35,7 @@ export default function Testimonial() {
               margin: "0 0 32px",
             }}
           >
-            Pasamos de cobrar a mano con un cuaderno a tener la operación de
-            tres sedes en una sola pantalla. La morosidad cayó 60% en los
-            primeros tres meses.
+            {testimonial.quote}
           </p>
           <div
             style={{
@@ -58,12 +60,12 @@ export default function Testimonial() {
                 fontWeight: 600,
               }}
             >
-              DM
+              {testimonial.authorInitials}
             </div>
             <div style={{ textAlign: "left" }}>
-              <div style={{ fontSize: 15, fontWeight: 600 }}>Daniel Mora</div>
+              <div style={{ fontSize: 15, fontWeight: 600 }}>{testimonial.authorName}</div>
               <div style={{ fontSize: 13, color: "var(--ink-3)" }}>
-                Dueño, Forja Central · 3 sedes en San José
+                {testimonial.authorTitle}
               </div>
             </div>
           </div>

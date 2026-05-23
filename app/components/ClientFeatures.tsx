@@ -5,29 +5,18 @@ import {
   CardIcon,
 } from "./icons";
 import PhoneMockup from "./PhoneMockup";
+import content from "../data/content.json";
 
-const features = [
-  {
-    Icon: DumbbellIcon,
-    title: "Entreno guiado",
-    desc: "La rutina del día, con sets, reps y timer de descanso. Marca los sets y seguí sin sacar el teléfono del bolsillo.",
-  },
-  {
-    Icon: ChartIcon,
-    title: "Tu progreso",
-    desc: "Peso, fuerza, asistencia y récords personales. Gráficos claros, sin métricas inútiles.",
-  },
-  {
-    Icon: CalendarIcon,
-    title: "Agenda",
-    desc: "Reservá clases, mirá la disponibilidad de la sala y cancelá con un toque. Recordatorios automáticos.",
-  },
-  {
-    Icon: CardIcon,
-    title: "Pagos y recibos",
-    desc: "Tu membresía al día. Pagá con tarjeta o transferencia, descargá recibos cuando los necesités.",
-  },
-];
+const { clientFeatures } = content;
+
+type IconKey = "dumbbell" | "chart" | "calendar" | "card";
+
+const iconMap: Record<IconKey, React.ComponentType<{ size?: number }>> = {
+  dumbbell: DumbbellIcon,
+  chart: ChartIcon,
+  calendar: CalendarIcon,
+  card: CardIcon,
+};
 
 export default function ClientFeatures() {
   return (
@@ -84,7 +73,7 @@ export default function ClientFeatures() {
 
           {/* right – copy */}
           <div>
-            <Eyebrow color="var(--ink-4)">Para los socios</Eyebrow>
+            <Eyebrow color="var(--ink-4)">{clientFeatures.eyebrow}</Eyebrow>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
@@ -95,7 +84,7 @@ export default function ClientFeatures() {
                 margin: "20px 0 24px",
               }}
             >
-              Una app que se siente como entrenar bien.
+              {clientFeatures.headline}
             </h2>
             <p
               style={{
@@ -105,9 +94,7 @@ export default function ClientFeatures() {
                 margin: "0 0 40px",
               }}
             >
-              Sin formularios, sin pestañas escondidas, sin pop-ups. La app del
-              socio existe para que el miembro entre, entrene, vea su progreso
-              y salga. Lo demás molesta.
+              {clientFeatures.description}
             </p>
 
             <div
@@ -117,54 +104,57 @@ export default function ClientFeatures() {
                 gap: 14,
               }}
             >
-              {features.map((f) => (
-                <div
-                  key={f.title}
-                  style={{
-                    padding: 20,
-                    borderRadius: 16,
-                    background: "rgba(245,244,238,0.04)",
-                    border: "1px solid rgba(245,244,238,0.10)",
-                  }}
-                >
+              {clientFeatures.features.map((f) => {
+                const Icon = iconMap[f.icon as IconKey];
+                return (
                   <div
+                    key={f.title}
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
-                      background: "rgba(245,244,238,0.08)",
-                      color: "var(--page-ink)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginBottom: 12,
+                      padding: 20,
+                      borderRadius: 16,
+                      background: "rgba(245,244,238,0.04)",
+                      border: "1px solid rgba(245,244,238,0.10)",
                     }}
                   >
-                    <f.Icon size={18} />
+                    <div
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 10,
+                        background: "rgba(245,244,238,0.08)",
+                        color: "var(--page-ink)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 12,
+                      }}
+                    >
+                      <Icon size={18} />
+                    </div>
+                    <h4
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontSize: 17,
+                        fontWeight: 600,
+                        margin: "0 0 6px",
+                        letterSpacing: -0.3,
+                      }}
+                    >
+                      {f.title}
+                    </h4>
+                    <p
+                      style={{
+                        fontSize: 13,
+                        color: "var(--ink-4)",
+                        lineHeight: 1.5,
+                        margin: 0,
+                      }}
+                    >
+                      {f.desc}
+                    </p>
                   </div>
-                  <h4
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: 17,
-                      fontWeight: 600,
-                      margin: "0 0 6px",
-                      letterSpacing: -0.3,
-                    }}
-                  >
-                    {f.title}
-                  </h4>
-                  <p
-                    style={{
-                      fontSize: 13,
-                      color: "var(--ink-4)",
-                      lineHeight: 1.5,
-                      margin: 0,
-                    }}
-                  >
-                    {f.desc}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -208,11 +198,7 @@ function Eyebrow({
 }
 
 function WorkoutPreview() {
-  const exercises = [
-    { name: "Press de banca", sets: 4, reps: "8-12", last: "60 kg × 12" },
-    { name: "Press inclinado", sets: 4, reps: "10", last: "22 kg × 10" },
-    { name: "Aperturas", sets: 3, reps: "10-12", last: "25 kg × 12" },
-  ];
+  const { workoutMockup: wm } = clientFeatures;
   return (
     <div
       style={{
@@ -226,16 +212,16 @@ function WorkoutPreview() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: "#F5F4EE" }}>Pecho · Tríceps</div>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--accent)" }}>Ej 2/8</div>
+        <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: "#F5F4EE" }}>{wm.title}</div>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--accent)" }}>{wm.progress}</div>
       </div>
       <div style={{ background: "var(--accent)", color: "var(--accent-ink)", borderRadius: 16, padding: 16, textAlign: "center" }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>Timer descanso</div>
-        <div style={{ fontFamily: "var(--font-display)", fontSize: 48, fontWeight: 600, letterSpacing: -2, lineHeight: 1 }}>1:23</div>
-        <div style={{ fontSize: 11, marginTop: 8, opacity: 0.7 }}>Serie 3 de 4 · 60 kg × 12</div>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>{wm.timerLabel}</div>
+        <div style={{ fontFamily: "var(--font-display)", fontSize: 48, fontWeight: 600, letterSpacing: -2, lineHeight: 1 }}>{wm.timerValue}</div>
+        <div style={{ fontSize: 11, marginTop: 8, opacity: 0.7 }}>{wm.timerDetail}</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {exercises.map((ex, i) => (
+        {wm.exercises.map((ex, i) => (
           <div key={ex.name} style={{ background: "#161614", borderRadius: 12, padding: 12, display: "flex", alignItems: "center", gap: 10, opacity: i === 0 ? 1 : 0.5 }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: i === 0 ? "var(--accent)" : "#5A5A52", flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
@@ -250,9 +236,8 @@ function WorkoutPreview() {
 }
 
 function ProgressPreview() {
-  const months = ["E", "F", "M", "A", "M", "J"];
-  const values = [62, 64, 63, 65, 67, 68];
-  const maxVal = 70;
+  const { progressMockup: pm } = clientFeatures;
+  const maxVal = pm.chartMax;
   return (
     <div
       style={{
@@ -265,27 +250,24 @@ function ProgressPreview() {
         overflowY: "hidden",
       }}
     >
-      <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 600, color: "#F5F4EE" }}>Progreso</div>
+      <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 600, color: "#F5F4EE" }}>{pm.title}</div>
       <div style={{ background: "#161614", borderRadius: 16, padding: 16 }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52", marginBottom: 8 }}>Peso corporal · kg</div>
-        <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 600, color: "#F5F4EE", letterSpacing: -1 }}>68<span style={{ fontSize: 16, color: "#5A5A52" }}>kg</span></div>
-        <div style={{ fontSize: 11, color: "var(--accent)", fontFamily: "var(--font-mono)", marginTop: 4 }}>↑ 6 kg en 6 meses</div>
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52", marginBottom: 8 }}>{pm.weightLabel}</div>
+        <div style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 600, color: "#F5F4EE", letterSpacing: -1 }}>{pm.weightValue}<span style={{ fontSize: 16, color: "#5A5A52" }}>{pm.weightUnit}</span></div>
+        <div style={{ fontSize: 11, color: "var(--accent)", fontFamily: "var(--font-mono)", marginTop: 4 }}>{pm.weightTrend}</div>
         {/* chart bars */}
         <div style={{ display: "flex", gap: 6, alignItems: "flex-end", marginTop: 16, height: 60 }}>
-          {values.map((v, i) => (
+          {pm.chartValues.map((v, i) => (
             <div key={i} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-              <div style={{ width: "100%", borderRadius: 4, background: i === values.length - 1 ? "var(--accent)" : "#2B2B27", height: `${(v / maxVal) * 60}px` }} />
-              <div style={{ fontSize: 8, color: "#5A5A52", fontFamily: "var(--font-mono)" }}>{months[i]}</div>
+              <div style={{ width: "100%", borderRadius: 4, background: i === pm.chartValues.length - 1 ? "var(--accent)" : "#2B2B27", height: `${(v / maxVal) * 60}px` }} />
+              <div style={{ fontSize: 8, color: "#5A5A52", fontFamily: "var(--font-mono)" }}>{pm.chartMonths[i]}</div>
             </div>
           ))}
         </div>
       </div>
       {/* stats grid */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-        {[
-          { label: "Racha", value: "12 días" },
-          { label: "Entrenos", value: "48 total" },
-        ].map((s) => (
+        {pm.stats.map((s) => (
           <div key={s.label} style={{ background: "#161614", borderRadius: 12, padding: 12 }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#5A5A52" }}>{s.label}</div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 600, color: "#F5F4EE", marginTop: 4 }}>{s.value}</div>

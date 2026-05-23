@@ -1,5 +1,8 @@
 import ArrowIcon from "./icons/ArrowIcon";
 import CheckIcon from "./icons/CheckIcon";
+import content from "../data/content.json";
+
+const { finalCta, brand } = content;
 
 export default function FinalCTA() {
   return (
@@ -48,7 +51,7 @@ export default function FinalCTA() {
           >
             {/* left */}
             <div>
-              <Eyebrow>Listos cuando vos</Eyebrow>
+              <Eyebrow>{finalCta.eyebrow}</Eyebrow>
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
@@ -59,9 +62,9 @@ export default function FinalCTA() {
                   margin: "20px 0 24px",
                 }}
               >
-                Llevá tu gym al
+                {finalCta.headlineLine1}
                 <br />
-                siguiente nivel.
+                {finalCta.headlineLine2}
               </h2>
               <p
                 style={{
@@ -72,12 +75,11 @@ export default function FinalCTA() {
                   maxWidth: 540,
                 }}
               >
-                Agendá una demo de 30 minutos. Te mostramos Forja con la data
-                de tu gym y te decimos en qué se nota desde el primer mes.
+                {finalCta.description}
               </p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a
-                  href="mailto:hola@forja.app"
+                  href={`mailto:${brand.email}`}
                   style={{
                     padding: "16px 24px",
                     borderRadius: 12,
@@ -90,7 +92,7 @@ export default function FinalCTA() {
                     gap: 8,
                   }}
                 >
-                  Agendar demo <ArrowIcon size={14} />
+                  {finalCta.ctaPrimary} <ArrowIcon size={14} />
                 </a>
                 <a
                   href="#producto"
@@ -104,7 +106,7 @@ export default function FinalCTA() {
                     border: "1px solid rgba(14,14,12,0.15)",
                   }}
                 >
-                  Ver el prototipo →
+                  {finalCta.ctaSecondary}
                 </a>
               </div>
             </div>
@@ -130,14 +132,9 @@ export default function FinalCTA() {
                     color: "var(--ink-4)",
                   }}
                 >
-                  QUÉ INCLUYE LA DEMO
+                  {finalCta.demoCard.title}
                 </div>
-                {[
-                  "Recorrido por panel y app",
-                  "Análisis de tu operación actual",
-                  "Plan de migración personalizado",
-                  "Cotización en vivo",
-                ].map((t) => (
+                {finalCta.demoCard.items.map((t) => (
                   <div
                     key={t}
                     style={{
@@ -168,7 +165,7 @@ export default function FinalCTA() {
                       color: "var(--ink-4)",
                     }}
                   >
-                    DURACIÓN
+                    {finalCta.demoCard.durationLabel}
                   </div>
                   <div
                     style={{
@@ -178,7 +175,7 @@ export default function FinalCTA() {
                       marginTop: 4,
                     }}
                   >
-                    30 minutos
+                    {finalCta.demoCard.duration}
                   </div>
                 </div>
               </div>

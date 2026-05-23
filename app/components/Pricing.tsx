@@ -1,51 +1,8 @@
 import CheckIcon from "./icons/CheckIcon";
 import ArrowIcon from "./icons/ArrowIcon";
+import content from "../data/content.json";
 
-const plans = [
-  {
-    name: "Starter",
-    price: "25.000",
-    desc: "Una sede, hasta 100 socios.",
-    cta: "Empezar 14 días gratis",
-    highlight: false,
-    features: [
-      "App del socio (iOS + Android)",
-      "Panel web · 2 cuentas de staff",
-      "Cobros con tarjeta y SINPE",
-      "Rutinas y agenda",
-      "Soporte por chat",
-    ],
-  },
-  {
-    name: "Growth",
-    price: "55.000",
-    desc: "Hasta 3 sedes, socios ilimitados.",
-    cta: "Probar Growth",
-    highlight: true,
-    features: [
-      "Todo lo de Starter",
-      "Multi-sede con consolidado",
-      "Reportes avanzados y exportación",
-      "Cuentas de staff ilimitadas",
-      "Onboarding asistido",
-      "Soporte prioritario",
-    ],
-  },
-  {
-    name: "Cadena",
-    price: "A medida",
-    desc: "Más de 3 sedes o operación regional.",
-    cta: "Hablemos",
-    highlight: false,
-    features: [
-      "Todo lo de Growth",
-      "API y webhooks",
-      "SLA y manager dedicado",
-      "Integración con tu contabilidad",
-      "Despliegue regional",
-    ],
-  },
-];
+const { pricing } = content;
 
 export default function Pricing() {
   return (
@@ -61,7 +18,7 @@ export default function Pricing() {
         <div
           style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 60px" }}
         >
-          <Eyebrow>Precios</Eyebrow>
+          <Eyebrow>{pricing.eyebrow}</Eyebrow>
           <h2
             style={{
               fontFamily: "var(--font-display)",
@@ -72,7 +29,7 @@ export default function Pricing() {
               margin: "20px 0 18px",
             }}
           >
-            Precios honestos, en colones.
+            {pricing.headline}
           </h2>
           <p
             style={{
@@ -82,8 +39,7 @@ export default function Pricing() {
               margin: 0,
             }}
           >
-            Sin contratos largos, sin comisiones sobre tus cobros, sin
-            sorpresas. Cancelás cuando querés.
+            {pricing.description}
           </p>
         </div>
 
@@ -95,7 +51,7 @@ export default function Pricing() {
             alignItems: "stretch",
           }}
         >
-          {plans.map((p) => (
+          {pricing.plans.map((p) => (
             <div
               key={p.name}
               style={{
@@ -128,7 +84,7 @@ export default function Pricing() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  MÁS POPULAR
+                  {pricing.popularLabel}
                 </div>
               )}
 
@@ -263,7 +219,7 @@ export default function Pricing() {
             letterSpacing: 0.3,
           }}
         >
-          Todos los precios incluyen IVA · Sin costo de instalación · Migración gratis
+          {pricing.footerNote}
         </div>
       </div>
     </section>

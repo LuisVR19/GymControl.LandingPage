@@ -6,39 +6,20 @@ import {
   BellIcon,
   SettingsIcon,
 } from "./icons";
+import content from "../data/content.json";
 
-const features = [
-  {
-    Icon: UsersIcon,
-    title: "Socios",
-    desc: "Altas, bajas, congelamientos y check-in con QR. Cada miembro tiene un perfil con su historial, métricas y pagos.",
-  },
-  {
-    Icon: MoneyIcon,
-    title: "Cobros automáticos",
-    desc: "Cobrá tarjeta, transferencia o efectivo. Forja envía recordatorios, reintenta cargos fallidos y emite recibos.",
-  },
-  {
-    Icon: DumbbellIcon,
-    title: "Rutinas",
-    desc: "Construí planes una vez y asignalos por grupo o por socio. Tus coaches editan desde el panel; los socios ven cambios al instante.",
-  },
-  {
-    Icon: ChartIcon,
-    title: "Reportes en vivo",
-    desc: "Ingresos, asistencia, retención y proyecciones. Filtros por sede, plan y período. Exportá a CSV o PDF.",
-  },
-  {
-    Icon: BellIcon,
-    title: "Comunicación",
-    desc: "Notificaciones push, anuncios por sede y mensajes 1:1 con socios. Plantillas para mora, renovación y eventos.",
-  },
-  {
-    Icon: SettingsIcon,
-    title: "Multi-sede",
-    desc: "Una cuenta, todas las sucursales. Roles por staff, permisos por sede, consolidado global. Sin Excel paralelo.",
-  },
-];
+const { ownerFeatures } = content;
+
+type IconKey = "users" | "money" | "dumbbell" | "chart" | "bell" | "settings";
+
+const iconMap: Record<IconKey, React.ComponentType<{ size?: number }>> = {
+  users: UsersIcon,
+  money: MoneyIcon,
+  dumbbell: DumbbellIcon,
+  chart: ChartIcon,
+  bell: BellIcon,
+  settings: SettingsIcon,
+};
 
 export default function OwnerFeatures() {
   return (
@@ -61,7 +42,7 @@ export default function OwnerFeatures() {
           }}
         >
           <div>
-            <Eyebrow>Para dueños y staff</Eyebrow>
+            <Eyebrow>{ownerFeatures.eyebrow}</Eyebrow>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
@@ -72,7 +53,7 @@ export default function OwnerFeatures() {
                 margin: "20px 0 0",
               }}
             >
-              La operación del gym, en un solo panel.
+              {ownerFeatures.headline}
             </h2>
           </div>
           <p
@@ -83,9 +64,7 @@ export default function OwnerFeatures() {
               paddingTop: 32,
             }}
           >
-            Forja reemplaza la planilla, el cuaderno de cobros, los chats de
-            WhatsApp y las apps separadas. Todo lo que necesitás para correr el
-            gym vive acá — y se comunica solo con la app del socio.
+            {ownerFeatures.description}
           </p>
         </div>
 
@@ -96,56 +75,59 @@ export default function OwnerFeatures() {
             gap: 18,
           }}
         >
-          {features.map((f) => (
-            <div
-              key={f.title}
-              style={{
-                background: "var(--cream-sunk)",
-                borderRadius: 20,
-                padding: 28,
-                border: "1px solid var(--line)",
-                display: "flex",
-                flexDirection: "column",
-                gap: 14,
-              }}
-            >
+          {ownerFeatures.features.map((f) => {
+            const Icon = iconMap[f.icon as IconKey];
+            return (
               <div
+                key={f.title}
                 style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 12,
-                  background: "var(--ink)",
-                  color: "var(--cream)",
+                  background: "var(--cream-sunk)",
+                  borderRadius: 20,
+                  padding: 28,
+                  border: "1px solid var(--line)",
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  flexDirection: "column",
+                  gap: 14,
                 }}
               >
-                <f.Icon size={20} />
+                <div
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 12,
+                    background: "var(--ink)",
+                    color: "var(--cream)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Icon size={20} />
+                </div>
+                <h4
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: 20,
+                    fontWeight: 600,
+                    letterSpacing: -0.4,
+                    margin: 0,
+                  }}
+                >
+                  {f.title}
+                </h4>
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: "var(--ink-3)",
+                    lineHeight: 1.55,
+                    margin: 0,
+                  }}
+                >
+                  {f.desc}
+                </p>
               </div>
-              <h4
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: 20,
-                  fontWeight: 600,
-                  letterSpacing: -0.4,
-                  margin: 0,
-                }}
-              >
-                {f.title}
-              </h4>
-              <p
-                style={{
-                  fontSize: 14,
-                  color: "var(--ink-3)",
-                  lineHeight: 1.55,
-                  margin: 0,
-                }}
-              >
-                {f.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,25 +1,6 @@
-const steps = [
-  {
-    n: "01",
-    t: "Te damos de alta",
-    d: "En una llamada de 30 minutos migramos tu base de socios, planes y cobros. Sin pelearte con un CSV.",
-  },
-  {
-    n: "02",
-    t: "Cargás tu gym",
-    d: "Sedes, planes, rutinas y staff. Te acompañamos en la primera semana hasta que cada coach esté operando.",
-  },
-  {
-    n: "03",
-    t: "Tus socios entran",
-    d: "Cada miembro se registra con QR y la app les pide los pagos pendientes. Cero cobros perdidos desde día 1.",
-  },
-  {
-    n: "04",
-    t: "Crecé sin caos",
-    d: "Abrí más sedes, sumá coaches, lanzá planes nuevos. Forja escala con vos sin romper la operación.",
-  },
-];
+import content from "../data/content.json";
+
+const { howItWorks } = content;
 
 export default function HowItWorks() {
   return (
@@ -34,7 +15,7 @@ export default function HowItWorks() {
         <div
           style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 70px" }}
         >
-          <Eyebrow>Cómo funciona</Eyebrow>
+          <Eyebrow>{howItWorks.eyebrow}</Eyebrow>
           <h2
             style={{
               fontFamily: "var(--font-display)",
@@ -45,7 +26,7 @@ export default function HowItWorks() {
               margin: "20px 0",
             }}
           >
-            De Excel al cierre de mes, en una semana.
+            {howItWorks.headline}
           </h2>
         </div>
 
@@ -56,7 +37,7 @@ export default function HowItWorks() {
             gap: 0,
           }}
         >
-          {steps.map((s, i) => (
+          {howItWorks.steps.map((s, i) => (
             <div
               key={s.n}
               style={{
@@ -86,7 +67,7 @@ export default function HowItWorks() {
                   margin: "0 0 12px",
                 }}
               >
-                {s.t}
+                {s.title}
               </h4>
               <p
                 style={{
@@ -96,7 +77,7 @@ export default function HowItWorks() {
                   margin: 0,
                 }}
               >
-                {s.d}
+                {s.desc}
               </p>
             </div>
           ))}

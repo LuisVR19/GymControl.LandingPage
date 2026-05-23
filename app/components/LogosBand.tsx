@@ -1,11 +1,6 @@
-const logos = [
-  "SABANA FIT",
-  "FORJA CENTRAL",
-  "IRONWORKS",
-  "NORTE GYM",
-  "CASA STRENGTH",
-  "HÉROES CLUB",
-];
+import content from "../data/content.json";
+
+const { logosBand } = content;
 
 export default function LogosBand() {
   return (
@@ -29,18 +24,18 @@ export default function LogosBand() {
             marginBottom: 24,
           }}
         >
-          GIMNASIOS QUE OPERAN CON FORJA
+          {logosBand.eyebrow}
         </div>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${logos.length}, 1fr)`,
+            gridTemplateColumns: `repeat(${logosBand.logos.length}, 1fr)`,
             gap: 24,
             alignItems: "center",
             opacity: 0.7,
           }}
         >
-          {logos.map((t) => (
+          {logosBand.logos.map((t) => (
             <div
               key={t}
               style={{

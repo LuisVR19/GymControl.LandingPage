@@ -1,29 +1,8 @@
 "use client";
 
-const cols = [
-  {
-    t: "Producto",
-    items: ["Panel del dueño", "App del socio", "Integraciones", "Cambios"],
-  },
-  {
-    t: "Compañía",
-    items: [
-      "Sobre Forja",
-      "Clientes",
-      "Trabajá con nosotros",
-      "Prensa",
-    ],
-  },
-  {
-    t: "Recursos",
-    items: [
-      "Centro de ayuda",
-      "Estado del servicio",
-      "Política de privacidad",
-      "Términos",
-    ],
-  },
-];
+import content from "../data/content.json";
+
+const { footer, brand } = content;
 
 export default function Footer() {
   return (
@@ -54,22 +33,12 @@ export default function Footer() {
                 marginBottom: 16,
               }}
             >
-              <div
-                style={{
-                  width: 30,
-                  height: 30,
-                  borderRadius: 8,
-                  background: "var(--accent)",
-                  color: "var(--accent-ink)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "var(--font-display)",
-                  fontSize: 18,
-                  fontWeight: 700,
-                }}
-              >
-                F
+              <div style={{ width: 42, height: 42, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <img
+                  src="/logo-gym-cropped.png"
+                  alt={brand.name}
+                  style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+                />
               </div>
               <div
                 style={{
@@ -78,7 +47,7 @@ export default function Footer() {
                   fontWeight: 600,
                 }}
               >
-                Forja
+                {brand.name}
               </div>
             </div>
             <p
@@ -90,7 +59,7 @@ export default function Footer() {
                 maxWidth: 280,
               }}
             >
-              Software para gimnasios independientes y cadenas en Costa Rica.
+              {brand.description}
             </p>
             <div
               style={{
@@ -99,13 +68,13 @@ export default function Footer() {
                 fontFamily: "var(--font-mono)",
               }}
             >
-              San José, CR · hola@forja.app
+              {brand.location} · {brand.email}
             </div>
           </div>
 
           {/* link columns */}
-          {cols.map((col) => (
-            <div key={col.t}>
+          {footer.columns.map((col) => (
+            <div key={col.title}>
               <div
                 style={{
                   fontFamily: "var(--font-mono)",
@@ -116,7 +85,7 @@ export default function Footer() {
                   textTransform: "uppercase",
                 }}
               >
-                {col.t}
+                {col.title}
               </div>
               <ul
                 style={{
@@ -173,7 +142,7 @@ export default function Footer() {
               fontFamily: "var(--font-mono)",
             }}
           >
-            © 2026 Forja Software S.A. · Costa Rica
+            {footer.copyright}
           </div>
           <div
             style={{
@@ -194,7 +163,7 @@ export default function Footer() {
                 display: "inline-block",
               }}
             />
-            Todos los sistemas operando
+            {footer.statusText}
           </div>
         </div>
       </div>

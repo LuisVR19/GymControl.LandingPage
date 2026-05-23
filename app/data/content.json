@@ -1,0 +1,374 @@
+{
+  "brand": {
+    "name": "MyGymGo",
+    "letter": "M",
+    "description": "Software para gimnasios independientes y cadenas en Costa Rica.",
+    "location": "San José, CR",
+    "email": "hola@mygymgo.app"
+  },
+  "nav": {
+    "links": [
+      { "href": "#producto", "label": "Producto" },
+      { "href": "#owner", "label": "Para dueños" },
+      { "href": "#cliente", "label": "Para socios" },
+      { "href": "#precios", "label": "Precios" },
+      { "href": "#faq", "label": "FAQ" }
+    ],
+    "ctaSecondary": "Ver demo",
+    "ctaPrimary": "Agendar llamada"
+  },
+  "hero": {
+    "eyebrow": "Software para gimnasios · Costa Rica",
+    "headline": "El gym que opera sin",
+    "headlineAccent": "fricción",
+    "description": "MyGymGo conecta a tus socios y a tu operación en una sola plataforma: app móvil para entrenar y pagar, panel web para administrar sedes, rutinas, cobros y crecimiento.",
+    "ctaPrimary": "Empezar prueba · 14 días gratis",
+    "ctaSecondary": "Ver demo interactivo",
+    "stats": [
+      { "num": "+40", "label": "gyms activos" },
+      { "num": "8.200", "label": "socios" },
+      { "num": "99.9%", "label": "uptime" }
+    ],
+    "badgePayment": {
+      "title": "Pago recibido",
+      "detail": "₡25.000 · 1 May"
+    },
+    "badgeStreak": {
+      "title": "Racha · 12 días",
+      "detail": "Mejor mes del año"
+    },
+    "mockupRecord": {
+      "value": "78kg",
+      "label": "NUEVO RÉCORD"
+    },
+    "mockupApp": {
+      "date": "Lunes 18 May",
+      "greeting": "Hola, Cliente 1",
+      "workout": {
+        "dayLabel": "Hoy · Día 3 / 5",
+        "name": "Pecho & Tríceps",
+        "exercises": "8",
+        "duration": "~52",
+        "cta": "Empezar entreno"
+      },
+      "statsWeek": {
+        "label": "Esta semana",
+        "value": "3",
+        "total": "5"
+      },
+      "statsStreak": {
+        "label": "Racha",
+        "value": "12",
+        "unit": "días",
+        "badge": "🔥 récord"
+      },
+      "bottomNav": ["Inicio", "Rutinas", "Progreso", "Agenda", "Perfil"]
+    }
+  },
+  "logosBand": {
+    "eyebrow": "GIMNASIOS QUE OPERAN CON FORJA",
+    "logos": [
+      "SABANA FIT",
+      "MYGYMGO CENTRAL",
+      "IRONWORKS",
+      "NORTE GYM",
+      "CASA STRENGTH",
+      "HÉROES CLUB"
+    ]
+  },
+  "producto": {
+    "eyebrow": "Una plataforma, dos lados",
+    "headlineLine1": "Tus socios entrenan.",
+    "headlineLine2": "Vos administrás.",
+    "description": "MyGymGo viene en dos sabores que comparten datos en tiempo real: una app móvil para los miembros y un panel web para el dueño y el staff.",
+    "mobileApp": {
+      "pill": "iOS · Android",
+      "title": "App del socio",
+      "description": "Rutinas asignadas, ejecución guiada, progreso, pagos y agenda. Pensada para usarse en el suelo del gym, con una mano.",
+      "features": [
+        "Rutinas con sets, reps y tempo",
+        "Timer de descanso integrado",
+        "Historial de pagos y recibos",
+        "Notificaciones del coach"
+      ],
+      "mockup": {
+        "title": "Rutinas",
+        "subtitle": "Push / Pull / Legs · Sem 4 de 8",
+        "workouts": [
+          { "name": "Push · Pecho/Tríceps", "day": "Hoy", "exercises": 8, "series": 24 },
+          { "name": "Pull · Espalda/Bíceps", "day": "Mañana", "exercises": 7, "series": 22 },
+          { "name": "Legs · Tren inferior", "day": "Mié", "exercises": 6, "series": 20 }
+        ]
+      }
+    },
+    "ownerPanel": {
+      "pill": "Web · Tablet",
+      "title": "Panel del dueño",
+      "description": "Operación completa: socios, rutinas, cobros, reportes y multi-sede. Todo en un dashboard que cabe en una pantalla.",
+      "features": [
+        "Dashboard con métricas en vivo",
+        "Cobros automáticos · Stripe",
+        "Constructor de rutinas",
+        "Multi-sede con un solo login"
+      ],
+      "mockup": {
+        "title": "Dashboard",
+        "tabs": ["Clientes", "Rutinas", "Pagos"],
+        "kpis": [
+          { "label": "Socios activos", "value": "247", "change": "+12" },
+          { "label": "Ingresos · May", "value": "₡3.2M", "change": "+8%" },
+          { "label": "Asistencia hoy", "value": "43", "change": "↑ vs ayer" },
+          { "label": "Pagos pendientes", "value": "18", "change": "−3" }
+        ],
+        "activityLabel": "Actividad reciente",
+        "activity": [
+          { "id": "C14", "text": "Cliente 14 · Pago recibido ₡25.000" },
+          { "id": "C9", "text": "Cliente 9 · Nueva membresía Mensual" },
+          { "id": "C22", "text": "Cliente 22 · Cobro pendiente" }
+        ]
+      }
+    }
+  },
+  "ownerFeatures": {
+    "eyebrow": "Para dueños y staff",
+    "headline": "La operación del gym, en un solo panel.",
+    "description": "MyGymGo reemplaza la planilla, el cuaderno de cobros, los chats de WhatsApp y las apps separadas. Todo lo que necesitás para correr el gym vive acá — y se comunica solo con la app del socio.",
+    "features": [
+      {
+        "icon": "users",
+        "title": "Socios",
+        "desc": "Altas, bajas, congelamientos y check-in con QR. Cada miembro tiene un perfil con su historial, métricas y pagos."
+      },
+      {
+        "icon": "money",
+        "title": "Cobros automáticos",
+        "desc": "Cobrá tarjeta, transferencia o efectivo. MyGymGo envía recordatorios, reintenta cargos fallidos y emite recibos."
+      },
+      {
+        "icon": "dumbbell",
+        "title": "Rutinas",
+        "desc": "Construí planes una vez y asignalos por grupo o por socio. Tus coaches editan desde el panel; los socios ven cambios al instante."
+      },
+      {
+        "icon": "chart",
+        "title": "Reportes en vivo",
+        "desc": "Ingresos, asistencia, retención y proyecciones. Filtros por sede, plan y período. Exportá a CSV o PDF."
+      },
+      {
+        "icon": "bell",
+        "title": "Comunicación",
+        "desc": "Notificaciones push, anuncios por sede y mensajes 1:1 con socios. Plantillas para mora, renovación y eventos."
+      },
+      {
+        "icon": "settings",
+        "title": "Multi-sede",
+        "desc": "Una cuenta, todas las sucursales. Roles por staff, permisos por sede, consolidado global. Sin Excel paralelo."
+      }
+    ]
+  },
+  "clientFeatures": {
+    "eyebrow": "Para los socios",
+    "headline": "Una app que se siente como entrenar bien.",
+    "description": "Sin formularios, sin pestañas escondidas, sin pop-ups. La app del socio existe para que el miembro entre, entrene, vea su progreso y salga. Lo demás molesta.",
+    "features": [
+      {
+        "icon": "dumbbell",
+        "title": "Entreno guiado",
+        "desc": "La rutina del día, con sets, reps y timer de descanso. Marca los sets y seguí sin sacar el teléfono del bolsillo."
+      },
+      {
+        "icon": "chart",
+        "title": "Tu progreso",
+        "desc": "Peso, fuerza, asistencia y récords personales. Gráficos claros, sin métricas inútiles."
+      },
+      {
+        "icon": "calendar",
+        "title": "Agenda",
+        "desc": "Reservá clases, mirá la disponibilidad de la sala y cancelá con un toque. Recordatorios automáticos."
+      },
+      {
+        "icon": "card",
+        "title": "Pagos y recibos",
+        "desc": "Tu membresía al día. Pagá con tarjeta o transferencia, descargá recibos cuando los necesités."
+      }
+    ],
+    "workoutMockup": {
+      "title": "Pecho · Tríceps",
+      "progress": "Ej 2/8",
+      "timerLabel": "Timer descanso",
+      "timerValue": "1:23",
+      "timerDetail": "Serie 3 de 4 · 60 kg × 12",
+      "exercises": [
+        { "name": "Press de banca", "sets": 4, "reps": "8-12", "last": "60 kg × 12" },
+        { "name": "Press inclinado", "sets": 4, "reps": "10", "last": "22 kg × 10" },
+        { "name": "Aperturas", "sets": 3, "reps": "10-12", "last": "25 kg × 12" }
+      ]
+    },
+    "progressMockup": {
+      "title": "Progreso",
+      "weightLabel": "Peso corporal · kg",
+      "weightValue": "68",
+      "weightUnit": "kg",
+      "weightTrend": "↑ 6 kg en 6 meses",
+      "chartMonths": ["E", "F", "M", "A", "M", "J"],
+      "chartValues": [62, 64, 63, 65, 67, 68],
+      "chartMax": 70,
+      "stats": [
+        { "label": "Racha", "value": "12 días" },
+        { "label": "Entrenos", "value": "48 total" }
+      ]
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "Cómo funciona",
+    "headline": "De Excel al cierre de mes, en una semana.",
+    "steps": [
+      {
+        "n": "01",
+        "title": "Te damos de alta",
+        "desc": "En una llamada de 30 minutos migramos tu base de socios, planes y cobros. Sin pelearte con un CSV."
+      },
+      {
+        "n": "02",
+        "title": "Cargás tu gym",
+        "desc": "Sedes, planes, rutinas y staff. Te acompañamos en la primera semana hasta que cada coach esté operando."
+      },
+      {
+        "n": "03",
+        "title": "Tus socios entran",
+        "desc": "Cada miembro se registra con QR y la app les pide los pagos pendientes. Cero cobros perdidos desde día 1."
+      },
+      {
+        "n": "04",
+        "title": "Crecé sin caos",
+        "desc": "Abrí más sedes, sumá coaches, lanzá planes nuevos. MyGymGo escala con vos sin romper la operación."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "Pasamos de cobrar a mano con un cuaderno a tener la operación de tres sedes en una sola pantalla. La morosidad cayó 60% en los primeros tres meses.",
+    "authorInitials": "DM",
+    "authorName": "Daniel Mora",
+    "authorTitle": "Dueño, MyGymGo Central · 3 sedes en San José"
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "headline": "Precios honestos, en colones.",
+    "description": "Sin contratos largos, sin comisiones sobre tus cobros, sin sorpresas. Cancelás cuando querés.",
+    "footerNote": "Todos los precios incluyen IVA · Sin costo de instalación · Migración gratis",
+    "popularLabel": "MÁS POPULAR",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "25.000",
+        "desc": "Una sede, hasta 100 socios.",
+        "cta": "Empezar 14 días gratis",
+        "highlight": false,
+        "features": [
+          "App del socio (iOS + Android)",
+          "Panel web · 2 cuentas de staff",
+          "Cobros con tarjeta y SINPE",
+          "Rutinas y agenda",
+          "Soporte por chat"
+        ]
+      },
+      {
+        "name": "Growth",
+        "price": "55.000",
+        "desc": "Hasta 3 sedes, socios ilimitados.",
+        "cta": "Probar Growth",
+        "highlight": true,
+        "features": [
+          "Todo lo de Starter",
+          "Multi-sede con consolidado",
+          "Reportes avanzados y exportación",
+          "Cuentas de staff ilimitadas",
+          "Onboarding asistido",
+          "Soporte prioritario"
+        ]
+      },
+      {
+        "name": "Cadena",
+        "price": "A medida",
+        "desc": "Más de 3 sedes o operación regional.",
+        "cta": "Hablemos",
+        "highlight": false,
+        "features": [
+          "Todo lo de Growth",
+          "API y webhooks",
+          "SLA y manager dedicado",
+          "Integración con tu contabilidad",
+          "Despliegue regional"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "headline": "Todo lo que querés preguntar antes de la demo.",
+    "subtext": "¿No ves tu pregunta? Escribinos directamente.",
+    "items": [
+      {
+        "q": "¿Necesito instalar algo?",
+        "a": "No. MyGymGo funciona desde el navegador para el panel del dueño y desde la App Store / Play Store para tus socios. No hay servidores, ni instaladores, ni licencias."
+      },
+      {
+        "q": "¿Qué pasa con mis datos actuales?",
+        "a": "Te migramos. Mandanos un Excel, una exportación de tu sistema actual o una foto del cuaderno. En la llamada de onboarding lo cargamos por vos."
+      },
+      {
+        "q": "¿Cobran comisión sobre los pagos?",
+        "a": "No. Pagás la mensualidad de MyGymGo y nada más de nuestra parte. Solo se aplican las comisiones del procesador de tarjeta (Stripe), igual que en cualquier comercio."
+      },
+      {
+        "q": "¿Puedo cancelar?",
+        "a": "Sí, cuando quieras. Sin penalización. Te entregamos toda tu data exportada antes de irte."
+      },
+      {
+        "q": "¿Funciona si tengo varias sedes?",
+        "a": "Sí. El plan Growth está pensado para multi-sede: un login, vista consolidada, permisos por sucursal. Si tenés más de 3 sedes te armamos un plan a medida."
+      },
+      {
+        "q": "¿Mis socios necesitan crear cuenta?",
+        "a": "Lo hacen una vez al afiliarse con el QR del gym. Después entran con biometría. La fricción es mínima — está diseñado para que un socio nuevo esté pagando en menos de 90 segundos."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Listos cuando vos",
+    "headlineLine1": "Llevá tu gym al",
+    "headlineLine2": "siguiente nivel.",
+    "description": "Agendá una demo de 30 minutos. Te mostramos MyGymGo con la data de tu gym y te decimos en qué se nota desde el primer mes.",
+    "ctaPrimary": "Agendar demo",
+    "ctaSecondary": "Ver el prototipo →",
+    "demoCard": {
+      "title": "QUÉ INCLUYE LA DEMO",
+      "items": [
+        "Recorrido por panel y app",
+        "Análisis de tu operación actual",
+        "Plan de migración personalizado",
+        "Cotización en vivo"
+      ],
+      "durationLabel": "DURACIÓN",
+      "duration": "30 minutos"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 MyGymGo Software S.A. · Costa Rica",
+    "statusText": "Todos los sistemas operando",
+    "columns": [
+      {
+        "title": "Producto",
+        "items": ["Panel del dueño", "App del socio", "Integraciones", "Cambios"]
+      },
+      {
+        "title": "Compañía",
+        "items": ["Sobre MyGymGo", "Clientes", "Trabajá con nosotros", "Prensa"]
+      },
+      {
+        "title": "Recursos",
+        "items": ["Centro de ayuda", "Estado del servicio", "Política de privacidad", "Términos"]
+      }
+    ]
+  }
+}

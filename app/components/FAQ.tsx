@@ -2,33 +2,9 @@
 
 import { useState } from "react";
 import ArrowIcon from "./icons/ArrowIcon";
+import content from "../data/content.json";
 
-const items = [
-  {
-    q: "¿Necesito instalar algo?",
-    a: "No. Forja funciona desde el navegador para el panel del dueño y desde la App Store / Play Store para tus socios. No hay servidores, ni instaladores, ni licencias.",
-  },
-  {
-    q: "¿Qué pasa con mis datos actuales?",
-    a: "Te migramos. Mandanos un Excel, una exportación de tu sistema actual o una foto del cuaderno. En la llamada de onboarding lo cargamos por vos.",
-  },
-  {
-    q: "¿Cobran comisión sobre los pagos?",
-    a: "No. Pagás la mensualidad de Forja y nada más de nuestra parte. Solo se aplican las comisiones del procesador de tarjeta (Stripe), igual que en cualquier comercio.",
-  },
-  {
-    q: "¿Puedo cancelar?",
-    a: "Sí, cuando quieras. Sin penalización. Te entregamos toda tu data exportada antes de irte.",
-  },
-  {
-    q: "¿Funciona si tengo varias sedes?",
-    a: "Sí. El plan Growth está pensado para multi-sede: un login, vista consolidada, permisos por sucursal. Si tenés más de 3 sedes te armamos un plan a medida.",
-  },
-  {
-    q: "¿Mis socios necesitan crear cuenta?",
-    a: "Lo hacen una vez al afiliarse con el QR del gym. Después entran con biometría. La fricción es mínima — está diseñado para que un socio nuevo esté pagando en menos de 90 segundos.",
-  },
-];
+const { faq, brand } = content;
 
 export default function FAQ() {
   const [open, setOpen] = useState<number>(0);
@@ -53,7 +29,7 @@ export default function FAQ() {
         >
           {/* sticky left */}
           <div style={{ position: "sticky", top: 120 }}>
-            <Eyebrow>Preguntas frecuentes</Eyebrow>
+            <Eyebrow>{faq.eyebrow}</Eyebrow>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
@@ -64,7 +40,7 @@ export default function FAQ() {
                 margin: "20px 0 20px",
               }}
             >
-              Todo lo que querés preguntar antes de la demo.
+              {faq.headline}
             </h2>
             <p
               style={{
@@ -74,10 +50,10 @@ export default function FAQ() {
                 margin: "0 0 20px",
               }}
             >
-              ¿No ves tu pregunta? Escribinos directamente.
+              {faq.subtext}
             </p>
             <a
-              href="mailto:hola@forja.app"
+              href={`mailto:${brand.email}`}
               style={{
                 fontSize: 14,
                 fontWeight: 600,
@@ -89,13 +65,13 @@ export default function FAQ() {
                 paddingBottom: 2,
               }}
             >
-              hola@forja.app <ArrowIcon size={12} />
+              {brand.email} <ArrowIcon size={12} />
             </a>
           </div>
 
           {/* accordion right */}
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {items.map((it, i) => {
+            {faq.items.map((it, i) => {
               const isOpen = open === i;
               return (
                 <div key={it.q} style={{ borderTop: "1px solid var(--line)" }}>

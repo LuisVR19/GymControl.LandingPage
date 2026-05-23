@@ -1,14 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import content from "../data/content.json";
 
-const navLinks = [
-  { href: "#producto", label: "Producto" },
-  { href: "#owner", label: "Para dueños" },
-  { href: "#cliente", label: "Para socios" },
-  { href: "#precios", label: "Precios" },
-  { href: "#faq", label: "FAQ" },
-];
+const { nav, brand } = content;
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -53,23 +48,12 @@ export default function Nav() {
           href="#top"
           style={{ display: "flex", alignItems: "center", gap: 10 }}
         >
-          <div
-            style={{
-              width: 30,
-              height: 30,
-              borderRadius: 8,
-              background: "var(--accent)",
-              color: "var(--accent-ink)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "var(--font-display)",
-              fontSize: 18,
-              fontWeight: 700,
-              letterSpacing: -0.5,
-            }}
-          >
-            F
+          <div style={{ width: 42, height: 42, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <img
+              src="/logo-gym-cropped.png"
+              alt={brand.name}
+              style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+            />
           </div>
           <span
             style={{
@@ -79,7 +63,7 @@ export default function Nav() {
               letterSpacing: -0.4,
             }}
           >
-            Forja
+            {brand.name}
           </span>
         </a>
 
@@ -90,7 +74,7 @@ export default function Nav() {
             alignItems: "center",
           }}
         >
-          {navLinks.map((l) => (
+          {nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -124,7 +108,7 @@ export default function Nav() {
               border: "1px solid rgba(245,244,238,0.10)",
             }}
           >
-            Ver demo
+            {nav.ctaSecondary}
           </a>
           <a
             href="#cta"
@@ -140,7 +124,7 @@ export default function Nav() {
               gap: 6,
             }}
           >
-            Agendar llamada
+            {nav.ctaPrimary}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
               <path
                 d="M5 12h14M13 6l6 6-6 6"

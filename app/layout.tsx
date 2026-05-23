@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Forja — Software para gimnasios",
+  title: "MyGymGo — Software para gimnasios",
   description:
-    "Forja conecta a tus socios y a tu operación en una sola plataforma: app móvil para entrenar y pagar, panel web para administrar sedes, rutinas, cobros y crecimiento.",
+    "MyGymGo conecta a tus socios y a tu operación en una sola plataforma: app móvil para entrenar y pagar, panel web para administrar sedes, rutinas, cobros y crecimiento.",
 };
 
 export default function RootLayout({
