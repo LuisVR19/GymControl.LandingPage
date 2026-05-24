@@ -16,7 +16,7 @@ export default function Producto() {
         padding: "120px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 80px" }}>
           <Eyebrow>{producto.eyebrow}</Eyebrow>
           <h2
@@ -38,9 +38,9 @@ export default function Producto() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
+        <div className="prod-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
           {/* mobile card */}
-          <div style={{
+          <div className="prod-card" style={{
             background: "var(--page-bg)", color: "var(--page-ink)", borderRadius: 28,
             padding: "40px 40px 0", position: "relative", overflow: "hidden",
             minHeight: 760, display: "flex", flexDirection: "column",
@@ -65,7 +65,7 @@ export default function Producto() {
                 </li>
               ))}
             </ul>
-            <div style={{ flex: 1, position: "relative", marginTop: "auto", minHeight: 340 }}>
+            <div className="prod-mock" style={{ flex: 1, position: "relative", marginTop: "auto", minHeight: 340 }}>
               <div style={{
                 position: "absolute", bottom: -40, left: "50%",
                 transform: "translateX(-50%) scale(0.62)",
@@ -79,7 +79,7 @@ export default function Producto() {
           </div>
 
           {/* web card */}
-          <div style={{
+          <div className="prod-card" style={{
             background: "var(--cream-sunk)", color: "var(--ink)", borderRadius: 28,
             padding: "40px 40px 0", position: "relative", overflow: "hidden",
             minHeight: 760, border: "1px solid var(--line)", display: "flex", flexDirection: "column",
@@ -104,7 +104,7 @@ export default function Producto() {
                 </li>
               ))}
             </ul>
-            <div style={{ flex: 1, position: "relative", marginTop: "auto", minHeight: 340, overflow: "hidden" }}>
+            <div className="prod-mock" style={{ flex: 1, position: "relative", marginTop: "auto", minHeight: 340, overflow: "hidden" }}>
               <div style={{
                 position: "absolute", bottom: 0, left: 0, width: "100%",
               }}>

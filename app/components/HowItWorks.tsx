@@ -11,7 +11,7 @@ export default function HowItWorks() {
         padding: "120px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
           style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 70px" }}
         >
@@ -31,6 +31,7 @@ export default function HowItWorks() {
         </div>
 
         <div
+          className="how-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
@@ -40,6 +41,7 @@ export default function HowItWorks() {
           {howItWorks.steps.map((s, i) => (
             <div
               key={s.n}
+              className={i > 0 ? "how-step-border" : undefined}
               style={{
                 padding: "32px 28px",
                 position: "relative",

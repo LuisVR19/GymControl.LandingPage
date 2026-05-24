@@ -31,8 +31,9 @@ export default function OwnerFeatures() {
         padding: "40px 0 120px",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
+          className="owner-hdr"
           style={{
             display: "grid",
             gridTemplateColumns: "0.9fr 1.1fr",
@@ -69,6 +70,7 @@ export default function OwnerFeatures() {
         </div>
 
         <div
+          className="feat-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

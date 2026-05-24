@@ -13,7 +13,8 @@
       "Bash(Format-Table -AutoSize)",
       "Bash(npx tsc *)",
       "PowerShell(Get-ChildItem \"C:\\\\Projects\\\\Personal\\\\GymControl.LandingPage\\\\app\\\\\" | Where-Object { $_.Name -match \"icon|favicon\" })",
-      "PowerShell(Copy-Item *)"
+      "PowerShell(Copy-Item *)",
+      "Bash(npx next *)"
     ]
   }
 }

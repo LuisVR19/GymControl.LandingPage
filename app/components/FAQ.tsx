@@ -18,8 +18,9 @@ export default function FAQ() {
         padding: "120px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
+          className="faq-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "0.8fr 1.2fr",
@@ -28,7 +29,7 @@ export default function FAQ() {
           }}
         >
           {/* sticky left */}
-          <div style={{ position: "sticky", top: 120 }}>
+          <div className="faq-sticky" style={{ position: "sticky", top: 120 }}>
             <Eyebrow>{faq.eyebrow}</Eyebrow>
             <h2
               style={{

@@ -11,7 +11,7 @@ export default function Testimonial() {
         padding: "100px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center" }}>
           <div
             style={{
@@ -26,6 +26,7 @@ export default function Testimonial() {
             &ldquo;
           </div>
           <p
+            className="quote-txt"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: 34,

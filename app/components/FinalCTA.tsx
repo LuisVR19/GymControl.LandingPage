@@ -14,8 +14,9 @@ export default function FinalCTA() {
         padding: "100px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
+          className="cta-box"
           style={{
             position: "relative",
             borderRadius: 32,
@@ -41,6 +42,7 @@ export default function FinalCTA() {
           />
 
           <div
+            className="cta-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1.4fr 0.6fr",

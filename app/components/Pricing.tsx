@@ -14,7 +14,7 @@ export default function Pricing() {
         padding: "120px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
           style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 60px" }}
         >
@@ -44,6 +44,7 @@ export default function Pricing() {
         </div>
 
         <div
+          className="price-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

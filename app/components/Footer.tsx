@@ -14,8 +14,9 @@ export default function Footer() {
         borderTop: "1px solid rgba(245,244,238,0.06)",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
+          className="foot-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.5fr 1fr 1fr 1fr",

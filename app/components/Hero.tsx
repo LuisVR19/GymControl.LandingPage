@@ -13,6 +13,7 @@ export default function Hero() {
   return (
     <section
       id="top"
+      className="hero-sec"
       style={{
         background: "var(--page-bg)",
         color: "var(--page-ink)",
@@ -53,6 +54,7 @@ export default function Hero() {
       />
 
       <div
+        className="rsp-px hero-grid"
         style={{
           maxWidth: 1240,
           margin: "0 auto",
@@ -91,6 +93,7 @@ export default function Hero() {
           </div>
 
           <h1
+            className="hero-h1"
             style={{
               fontFamily: "var(--font-display)",
               fontWeight: 600,
@@ -227,6 +230,7 @@ export default function Hero() {
 
         {/* right — phone mockup */}
         <div
+          className="hero-phones"
           style={{
             position: "relative",
             display: "flex",
@@ -252,6 +256,7 @@ export default function Hero() {
 
           {/* secondary phone behind */}
           <div
+            className="hero-sec-phone"
             style={{
               position: "absolute",
               top: 60,
@@ -309,6 +314,7 @@ export default function Hero() {
 
           {/* badge top left */}
           <div
+            className="hero-badge"
             style={{
               position: "absolute",
               top: 80,
@@ -359,6 +365,7 @@ export default function Hero() {
 
           {/* badge bottom right */}
           <div
+            className="hero-badge"
             style={{
               position: "absolute",
               bottom: 80,

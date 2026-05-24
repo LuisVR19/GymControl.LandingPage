@@ -28,8 +28,9 @@ export default function ClientFeatures() {
         padding: "120px 0",
       }}
     >
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+      <div className="rsp-px" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
         <div
+          className="cf-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -39,6 +40,7 @@ export default function ClientFeatures() {
         >
           {/* left – phones */}
           <div
+            className="cf-phones"
             style={{
               position: "relative",
               display: "flex",
@@ -48,6 +50,7 @@ export default function ClientFeatures() {
           >
             {/* secondary phone */}
             <div
+              className="cf-phone-bg"
               style={{
                 position: "absolute",
                 top: 20,
@@ -63,6 +66,7 @@ export default function ClientFeatures() {
             </div>
             {/* primary phone */}
             <div
+              className="cf-phone-pri"
               style={{ position: "relative", zIndex: 2, transform: "translateX(40px)" }}
             >
               <PhoneMockup>
@@ -72,7 +76,7 @@ export default function ClientFeatures() {
           </div>
 
           {/* right – copy */}
-          <div>
+          <div className="cf-copy">
             <Eyebrow color="var(--ink-4)">{clientFeatures.eyebrow}</Eyebrow>
             <h2
               style={{
@@ -98,6 +102,7 @@ export default function ClientFeatures() {
             </p>
 
             <div
+              className="cf-feat"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",

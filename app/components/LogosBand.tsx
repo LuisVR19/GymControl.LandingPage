@@ -12,6 +12,7 @@ export default function LogosBand() {
       }}
     >
       <div
+        className="rsp-px"
         style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}
       >
         <div
@@ -27,6 +28,7 @@ export default function LogosBand() {
           {logosBand.eyebrow}
         </div>
         <div
+          className="logos-grid"
           style={{
             display: "grid",
             gridTemplateColumns: `repeat(${logosBand.logos.length}, 1fr)`,
